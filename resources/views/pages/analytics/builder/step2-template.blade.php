@@ -141,7 +141,7 @@
                                 field += `</select>`;
                             } else {
                                 field = `<input type="text" id="param-${i}-input"
-                               value="" placeholder="${paramType}" required="true" maxlength="20" class="form-control field-${i}">`;
+                               value="" placeholder="${paramType}" required="true" maxlength="20" class="form-control input-field field-${i}">`;
                             }
                         }
                         addParamRow(i, length, paramName, field);
@@ -183,7 +183,7 @@
             let templateQuery = $('#tempQuery').val();
 
             paramGroup.children().find(".field").each(function () {
-                if (this.children != null && this.children.length > 0) {
+                if (this.children != null && this.children.length > 0 && this.children[0].classList.contains('input-field')) {
                     let val = $(this.children[0]).val();
                     let paramName = this.getAttribute("name");
 
